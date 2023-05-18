@@ -171,13 +171,21 @@ button:hover {
 
 }
 .img{
-    background-color: rgb(192, 169, 140);
-    height: 50vh;
+    height: 70vh;
+
+}
+.img img{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 
 .img2{
-    background-color: rgb(192, 169, 140);
     height: 30vh;
+
+}
+.img2 img{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 .title{
     color: white;
@@ -269,5 +277,6 @@ button:hover {
     border: 2px solid rgb(83, 4, 83); 
     padding: 2%;  
     margin-top: 2%; 
+    border-radius: 10px;
 }
     

@@ -30,9 +30,9 @@
                 <h1 style="color: white;">Steam-Fake</h1>
             </div>
             <div class="col inp">
-                <input type="text" id="gameName" placeholder="Name of the game">
+                <input type="text" id="search" placeholder="Name of the game">
                 <div class="boton">
-                    <button>Buscar</button>
+                    <button id="buscar">Buscar</button>
                 </div>
             </div>
         </div>
@@ -62,17 +62,17 @@
             </div>
             <div class="col-9">
                 <div class="img">
-                    <img id="img" src="" alt="">
+                    <img id="imgJuego" src="" alt="">
                 </div>
                 <div>
-                    <h2 class="title" id="title"> Aqui va el titulo</h2>
+                    <h2 class="title" id="title" style="font-size: 3rem; font-weight: bold;"> Aqui va el titulo</h2>
                 </div>
                 <div class="row">
                     <div class="col fecha">
-                        <p id="fecha" class="text">Release Date:</p>
+                        <p class="text">Release Date:<span id="fecha"><a id="link" href=""></a></span></p>
                     </div>
                     <div class="col precio">
-                        <p id="precio" class="text2">Price:</p>
+                        <p class="text2">Price: <span id="precio"></span></p>
                     </div>
                 </div>
                 <div class="descripcion">
@@ -90,7 +90,7 @@
                     <div class="col-9">
                         <h1 id="tituloOtros" style="color: white;">titulo de otros</h1>
                         <br>
-                        <p id="textoOtros" style="color: white;">texto</p>
+                        <p id="textOtro" style="color: white;">texto</p>
                     </div>
             </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
