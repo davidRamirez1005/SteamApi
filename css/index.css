@@ -19,6 +19,34 @@ body::-webkit-scrollbar-button{
 body::-webkit-scrollbar-track-piece{
     background-color: transparent;
 }
+.noticias::-webkit-scrollbar{
+    width: 14px;
+}
+.noticias::-webkit-scrollbar-thumb{
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+.noticias::-webkit-scrollbar-button{
+    background-color: #000000;
+}
+.noticias::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+.reviews::-webkit-scrollbar{
+    width: 14px;
+}
+.reviews::-webkit-scrollbar-thumb{
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+.reviews::-webkit-scrollbar-button{
+    background-color: #000000;
+}
+.reviews::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
 .imagen{
     background-image: url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/01/steam-2594191.jpg?tf=1200x);
     height: 50vh;
@@ -47,7 +75,16 @@ body::-webkit-scrollbar-track-piece{
     border: none;
     border-radius: 17px;
     background-color: #d9d9d9;
-    color: #380038;
+    color: white;
+}
+input:active {
+    background-color: transparent;
+    border: 3px solid #ffffff;
+    box-shadow: 2px 2px 15px #7642a7 inset;
+}
+input:focus {
+    background-color: transparent;
+    box-shadow: 2px 2px 15px #8707ff inset;
 }
 .navegadora{
     background-color: rgb(46, 2, 46);
@@ -82,10 +119,14 @@ body::-webkit-scrollbar-track-piece{
     display: flex;
     flex-direction: column;
     height: 36vh;
-    background-color: #ffffff;
+    background-color: rgb(46, 2, 46);
+    box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
     padding-top: 2vh;
     padding-left: 3%;
     flex-direction: column;
+    overflow: auto;
+    color: white;
+    border-radius: 10px;
 }
 .boton{
     display: flex;
@@ -104,30 +145,36 @@ body::-webkit-scrollbar-track-piece{
     
 }
 button:hover {
-    transition:background-position 3s;
+    transition:background-position 2s;
     background-position: 100% 0;
 }
 .noticias{
-    background-color: antiquewhite;
     height: 40vh;
     overflow: auto;
     display: flex;
     flex-direction: column;
     margin-top: 3%;
+    border-radius: 10px;
+    background-color: rgba(37, 4, 37, 0.87);
+    box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
 
 }
 .reviews{
-    background-color: rgb(192, 169, 140);
+    background-color: rgb(46, 2, 46);
+    box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
     height: 32vh;
     overflow: auto;
     display: flex;
     flex-direction: column;
     margin-top: 3%;
+    border-radius: 10px;
+
 }
 .img{
     background-color: rgb(192, 169, 140);
     height: 50vh;
 }
+
 .img2{
     background-color: rgb(192, 169, 140);
     height: 30vh;
@@ -141,14 +188,86 @@ button:hover {
 
 }
 .fecha{
-    background-color: antiquewhite;
+    background-color: rgb(61, 48, 61);
+    border-radius: 10px;
     height: 8vh;
 }
 .precio{
-    background-color: rgb(56, 44, 29);
+    background-color: #d9d9d9;
     height: 8vh;
+    border-radius: 10px;
+
 }
 .descripcion{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(46, 2, 46);
+    box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
     height: 40vh;
+    border-radius: 10px;
 }
+.text{
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.6rem;
+    
+}
+.text:hover {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+.text2{
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.6rem;
+}
+.text2:hover {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+}
+  
+  .input {
+      min-height: 50px;
+      max-width: 150px;
+      padding: 0 1rem;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #5e4dcd;
+      border-radius: 6px 0 0 6px;
+      background-color: transparent;
+    }
+    
+    .button--submit {
+        min-height: 50px;
+        padding: .5em 1em;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background-color: #5e4dcd;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color .3s ease-in-out;
+  }
+  
+  .button--submit:hover {
+      background-color: #5e5dcd;
+    }
+    
+    .input:focus, .input:focus-visible {
+        border-color: #3898EC;
+        outline: none;
+    }
+.tarjetas{
+    border: 2px solid rgb(83, 4, 83); 
+    padding: 2%;  
+    margin-top: 2%; 
+}
+    

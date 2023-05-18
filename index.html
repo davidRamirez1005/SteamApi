@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/main.js"defer></script>
+    <script src="./js/app.js"defer></script>
+
 
 </head>
 
@@ -25,7 +27,7 @@
                 <img src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="">
             </div>
             <div class="col titulo inp">
-                <h1 style="color: white;">Steam -fake</h1>
+                <h1 style="color: white;">Steam-Fake</h1>
             </div>
             <div class="col inp">
                 <input type="text" id="gameName" placeholder="Name of the game">
@@ -38,8 +40,7 @@
   </header>
   <main>
     <div class="container-fluid">
-        <div class="imagen" id="imagen">
-        </div>
+        <div class="imagen" id="imagen"></div>
         <div class="row">
             <div class="col-3">
                 <div class="categoriasJuego">
@@ -68,10 +69,10 @@
                 </div>
                 <div class="row">
                     <div class="col fecha">
-                        <p id="fecha"></p>
+                        <p id="fecha" class="text">Release Date:</p>
                     </div>
                     <div class="col precio">
-                        <p id="precio"></p>
+                        <p id="precio" class="text2">Price:</p>
                     </div>
                 </div>
                 <div class="descripcion">
@@ -80,7 +81,7 @@
                 <hr>
             </div>
         </div>
-            <div class="row">
+            <div class="row tarjetas">
                 <div class="col-3">
                     <div class="img2">
                         <img id="otrasImagenes" src="" alt="">
