@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background-color: rgb(46, 2, 46);
+}
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+body::-webkit-scrollbar-button{
+    background-color: #000000;
+}
+body::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+.imagen{
+    background-image: url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/01/steam-2594191.jpg?tf=1200x);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-origin: content-box;
+    background-attachment: fixed;
+    background-position: center;
+    background-position: left;
+    justify-content: flex-start;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    transition: filter 0.5s ease;
+}
+.blur {
+    filter: blur(10px);
+  }
+.inp input{
+    display: flex;
+    height: 4vh;
+    width: 100%;
+    margin-left: 3.5%;
+    justify-content: center;
+    text-align: -webkit-center;
+    border: none;
+    border-radius: 17px;
+    background-color: #d9d9d9;
+    color: #380038;
+}
+.navegadora{
+    background-color: rgb(46, 2, 46);
+    display: flex;
+    height: 10vh;
+    width: 99%;
+    box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
+    border-style: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    border-radius: 5px;
+}
+.inp{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.container-fluid{
+    width: 95%;
+    margin: auto;
+    background-color: rgba(37, 4, 37, 0.774);
+    margin-top: 10vh;
+}
+.categoriasJuego{
+    display: flex;
+    flex-direction: column;
+    height: 36vh;
+    background-color: #ffffff;
+    padding-top: 2vh;
+    padding-left: 3%;
+    flex-direction: column;
+
+}
