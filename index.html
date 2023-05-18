@@ -11,35 +11,69 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="./css/index.css">
+
 </head>
 
 <body>
   <header>
     <!-- place navbar here -->
-    <div class="nav">
+    <div class="navegadora">
         <div class="row">
-            <div class="col logo"></div>
-            <div class="col titulo"></div>
+            <div class="col logo">
+                <img src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="">
+            </div>
+            <div class="col titulo">
+                <h1>Steam -fake</h1>
+            </div>
         </div>
     </div>
   </header>
   <main>
     <div class="container-fluid">
-        <div class="imagen"></div>
+        <div class="imagen" id="imagen">
+            <input type="text" placeholder="Name of the game">
+        </div>
         <div class="row">
             <div class="col-4">
-                <div class="categoriasJuego"></div>
-                <div class="noticias"></div>
-                <div class="reviews"></div>
+                <div class="categoriasJuego">
+                    <ul class="nav justify-content-center  ">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page">Active link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Disabled link</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="noticias">
+                    <p id="noticias"></p>
+                </div>
+                <div class="reviews">
+                    <p id="reviews"></p>
+                </div>
             </div>
             <div class="col-7">
-                <div class="img"></div>
-                <div class="title"></div>
-                <div class="row">
-                    <div class="col fecha"></div>
-                    <div class="col precio"></div>
+                <div class="img">
+                    <img id="img" src="" alt="">
                 </div>
-                <div class="descripcion"></div>
+                <div class="title">
+                    <h2 id="title"></h2>
+                </div>
+                <div class="row">
+                    <div class="col fecha">
+                        <p id="fecha"></p>
+                    </div>
+                    <div class="col precio">
+                        <p id="precio"></p>
+                    </div>
+                </div>
+                <div class="descripcion">
+                    <p id="descripcion"></p>
+                </div>
             </div>
         </div>
     </div>
