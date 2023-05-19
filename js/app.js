@@ -58,27 +58,32 @@ function obtenerId(datos) {
    const fecha = IdPrincipal.released;
    document.getElementById("fecha").innerHTML = fecha;
 
+   const summary = IdPrincipal.reviewSummary; 
+   document.getElementById("summary").innerHTML = summary
 
    for (let i = 0; i < 10; i++) {
         otrasId =datos[i]
         let ID1 = otrasId.appId;
         console.log(ID1);
-        let div = 
-        `
-        
-        `
+        const tituloOtros = otrasId.title;
+        const textOtro = otrasId.reviewSummary;
+        document.querySelector(".tarjetas").innerHTML += 
+                        `
+                        <div class="col-3 tarj" >
+                        <div class="img2">
+                            <img id="otrasImagenes" src="${otrasId.imgUrl}" alt="">
+                        </div>
+                    </div>
+                        <div class="col-9">
+                            <h1 id="tituloOtros" style="color: white;">${tituloOtros}</h1>
+                            <br>
+                            <p id="textOtro" style="color: antiquewhite;">${textOtro}</p>
+                        </div>
+                        
+                        `
     
    }
-//    otrasId =datos[1]
-//    const ID1 = otrasId.appId;
-//    console.log(ID1);
-//     document.getElementById("otrasImagenes").src = otrasId.imgUrl;
 
-//     const tituloOtros = otrasId.title;
-//     document.getElementById("tituloOtros").innerHTML = tituloOtros;
-
-//     const textOtro = otrasId.reviewSummary;
-//     document.getElementById("textOtro").innerHTML = textOtro;
 
 // -------------
 const url2 = `https://steam2.p.rapidapi.com/appDetail/${ID}`;
@@ -91,14 +96,11 @@ async function datosUrl2(url2, options, ID) {
         console.log(datos);
         const descripcion = datos.description; 
         document.getElementById("descripcion").innerHTML = descripcion;
-
-        // const categoria1 = datos.tags[0].name; 
-        // document.getElementById("categoria1").innerHTML = categoria1;
         for (let i = 0; i < 10; i++) {
             let categoria = datos.tags[i].name; 
             document.querySelector(".categoriasJuego").innerHTML += `<p>=> <span id="categoria1">${categoria}</span></p>`;
         }
-        // mostrardescripcion(datos, ID);
+
       } else {
         throw new Error('Error en la solicitud. Código de estado: ' + response.status);
       }
@@ -106,9 +108,64 @@ async function datosUrl2(url2, options, ID) {
       console.log('Error 2 en la solicitud:', error.message);
     }
   }
+
+// Llamar a la función datosUrl2
+datosUrl2(url2, options,ID);
+
+
+const url3 = `https://steam2.p.rapidapi.com/newsForApp/${ID}/limit/10/300`;
   
-    // Llamar a la función datosUrl2
-    datosUrl2(url2, options,ID);
-    
+async function datosUrl3(url3, options, ID) {
+  try {
+    const response = await fetch(url3, options);
+    if (response.ok) {
+      const datos = await response.json();
+      console.log(datos);
+      for (let i = 0; i < 10; i++) {
+          let titulo = datos.appnews.newsitems[i].title; 
+          let noticias = datos.appnews.newsitems[i].contents; 
+          document.querySelector(".noticias").innerHTML += 
+          `<h4 class="tituloNoticias" >${titulo}</h4>
+          <p class="parrafoNoticias">&#10028 <span>${noticias}</span><hr></p>
+          `;
+      }
+
+    } else {
+      throw new Error('Error en la solicitud. Código de estado: ' + response.status);
+    }
+  } catch (error) {
+    console.log('Error 2 en la solicitud:', error.message);
+  }
+}
+  
+// Llamar a la función datosUrl3
+datosUrl3(url3, options,ID);
+
+const url4 = 'https://steam2.p.rapidapi.com/appReviews/730/limit/40/*';
+
+async function datosUrl4(url4, options, ID) {
+  try {
+    const response = await fetch(url4, options);
+    if (response.ok) {
+      const datos = await response.json();
+      console.log(datos);
+      for (let i = 0; i < 10; i++) {
+          let comentarios = datos.reviews[i].review; 
+          document.querySelector(".reviews").innerHTML += 
+          `
+          <p class="parrafoNoticias">&#11088 <span>${comentarios}</span><hr></p>
+          `;
+      }
+
+    } else {
+      throw new Error('Error en la solicitud. Código de estado: ' + response.status);
+    }
+  } catch (error) {
+    console.log('Error 2 en la solicitud:', error.message);
+  }
+}
+  
+// Llamar a la función datosUrl4
+datosUrl4(url4, options,ID);
 }
 

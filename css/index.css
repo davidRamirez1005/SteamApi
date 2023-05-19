@@ -6,6 +6,12 @@
 body{
     background-color: rgb(46, 2, 46);
 }
+h2{
+    font-family:monospace;
+}
+p{
+    font-family: sans-serif;
+}
 body::-webkit-scrollbar{
     width: 10px;
 }
@@ -204,13 +210,13 @@ button:hover {
     height: -webkit-fill-available;
 }
 .title{
-    color: white;
+    color:  rgb(255, 229, 229);
     display: flex;
     justify-content: center;
-    margin-top: 3%;
-    margin-bottom: 3%;
-
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
+
 .fecha{
     background-color: rgb(61, 48, 61);
     border-radius: 10px;
@@ -225,8 +231,13 @@ button:hover {
 .descripcion{
     background-color: rgb(46, 2, 46);
     box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
-    height: 40vh;
+    height: auto;
     border-radius: 10px;
+    padding: 5%;
+}
+.descripcion p{
+    color: white;
+    font-size: 1.6rem;
 }
 .text{
     display: flex;
@@ -257,42 +268,54 @@ button:hover {
     display: flex;
     align-items: center;
 }
-  
-  .input {
-      min-height: 50px;
-      max-width: 150px;
-      padding: 0 1rem;
-      color: #fff;
-      font-size: 15px;
-      border: 1px solid #5e4dcd;
-      border-radius: 6px 0 0 6px;
-      background-color: transparent;
-    }
-    
-    .button--submit {
-        min-height: 50px;
-        padding: .5em 1em;
-        border: none;
-        border-radius: 0 6px 6px 0;
-        background-color: #5e4dcd;
-        color: #fff;
-        font-size: 15px;
-        cursor: pointer;
-        transition: background-color .3s ease-in-out;
-  }
-  
-  .button--submit:hover {
-      background-color: #5e5dcd;
-    }
-    
-    .input:focus, .input:focus-visible {
-        border-color: #3898EC;
-        outline: none;
-    }
+
+.input {
+    min-height: 50px;
+    max-width: 150px;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #5e4dcd;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+
+.button--submit {
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #5e4dcd;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.button--submit:hover {
+    background-color: #5e5dcd;
+}
+
+.input:focus, .input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}
 .tarjetas{
     border: 2px solid rgb(83, 4, 83); 
     padding: 2%;  
     margin-top: 2%; 
     border-radius: 10px;
 }
-    
+.tarj{
+    margin-bottom: 3%;
+}
+.tituloNoticias{
+    color: antiquewhite;
+    font-weight: 600;
+    align-self: center;
+    display: flex;
+}
+.parrafoNoticias{
+    color: white;
+    margin-left: 1.5%;
+}
