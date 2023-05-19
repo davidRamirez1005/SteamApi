@@ -15,72 +15,82 @@ buscar.addEventListener(("click"),(el)=>{
   el.preventDefault()
 let search = document.getElementById("search").value
 
-const url = 'https://steam2.p.rapidapi.com/search/Among%20Us/page/1';
+const url = `https://steam2.p.rapidapi.com/search/${search}/page/1`;
  
 // Realizar la solicitud GET utilizando Fetch
-fetch(url,options)
-.then(function (response) {
-    if (response.ok) {
-        return response.json();
-    } else {
+async function fetchData(url, options) {
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) {
+        const datos = await response.json();
+        console.log("datos de url principal"+datos);
+        obtenerId(datos);
+      } else {
         throw new Error('Error en la solicitud. Código de estado: ' + response.status);
+      }
+    } catch (error) {
+      console.log('Error en la solicitud:', error.message);
     }
-})
-.then(function (datos) {
-
-    console.log(datos);
-    obtenerId(datos);
-})
-.catch(function (error) {
-    // Ha ocurrido un error durante la solicitud
-    console.log('Error en la solicitud:', error.message);
-});
+}
+  
+// Llamar a la función fetchData
+fetchData(url, options);
+  
 
 document.getElementById("search").value = ""
 })
 
 function obtenerId(datos) {
-  a =datos[0]
-  const ID = a.appId;
+  IdPrincipal =datos[0]
+  const ID = IdPrincipal.appId;
   console.log(ID);
-   document.getElementById("imgJuego").src = a.imgUrl;
+   document.getElementById("imgJuego").src = IdPrincipal.imgUrl;
    
-   const title = a.title;
+   const title = IdPrincipal.title;
    document.getElementById("title").innerHTML = title;
    
-   const link = a.url;
+   const link = IdPrincipal.url;
    document.getElementById("link").href = link;
    
-   const precio = a.price;
+   const precio = IdPrincipal.price;
    document.getElementById("precio").innerHTML = precio;
    
-   const fecha = a.released;
+   const fecha = IdPrincipal.released;
    document.getElementById("fecha").innerHTML = fecha;
 
-   b =datos[1]
-   const ID1 = b.appId;
+   otrasId =datos[1]
+   const ID1 = otrasId.appId;
    console.log(ID1);
-    document.getElementById("otrasImagenes").src = b.imgUrl;
+    document.getElementById("otrasImagenes").src = otrasId.imgUrl;
 
-    const tituloOtros = b.title;
+    const tituloOtros = otrasId.title;
     document.getElementById("tituloOtros").innerHTML = tituloOtros;
 
-    const textOtro = b.reviewSummary;
+    const textOtro = otrasId.reviewSummary;
     document.getElementById("textOtro").innerHTML = textOtro;
 
 // -------------
-//   const url2 = `https://youtube138.p.rapidapi.com/video/details/?id=${ID}&hl=en&gl=US`;
+     const url2 = `https://steam2.p.rapidapi.com/appDetail/${ID}`;
 
-//   fetch(url2, options)
-//     .then((respon) => respon.json())
-//     .then((datos) => mostrardescripcion(datos, ID))
-//     .catch(function (error) {
-//       console.log('Error en la solicitud:', error.message);
-//     });
-// }
+async function datosUrl2(url2, options, ID) {
+    try {
+        const response = await fetch(url2, options);
+        if (response.ok) {
+          const datos = await response.json();
+          console.log("datos de url descripcion"+datos);
+          mostrardescripcion(datos, ID);
+        } else {
+          throw new Error('Error en la solicitud. Código de estado: ' + response.status);
+        }
+    } catch (error) {
+        console.log('Error 2 en la solicitud:', error.message);
+        }
+    }
+}
+// Llamar a la función datosUrl2
+datosUrl2(url, options);
 
-
-// function mostrardescripcion(datos, ID) {
+function mostrardescripcion(datos, ID) {
 
 //   console.log(datos);
 //   const description = datos.description;
