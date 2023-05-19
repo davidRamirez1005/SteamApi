@@ -10,7 +10,7 @@ Esta elaborado con html,css,bootstrap y javascript
 
 La api tiene de 500 solicitudes por mes y 10 por minuto
 
-```html
+```js
 const options = {
 	method: 'GET',
 	headers: {

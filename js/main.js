@@ -18,11 +18,4 @@ document.addEventListener("DOMContentLoaded",()=>{
 })
 
 
-colorButton.addEventListener('click', function() {
-  const fondo = "#23262E"
-  const fondo2 ="#4e697d"
-  
-  body.style.backgroundColor = fondo;
-  cambio.style.backgroundColor = fondo2;
 
-});
