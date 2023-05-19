@@ -23,7 +23,7 @@ async function fetchData(url, options) {
       const response = await fetch(url, options);
       if (response.ok) {
         const datos = await response.json();
-        console.log("datos de url principal"+datos);
+        console.log(datos);
         obtenerId(datos);
       } else {
         throw new Error('Error en la solicitud. Código de estado: ' + response.status);
@@ -49,8 +49,8 @@ function obtenerId(datos) {
    const title = IdPrincipal.title;
    document.getElementById("title").innerHTML = title;
    
-   const link = IdPrincipal.url;
-   document.getElementById("link").href = link;
+//    const link = IdPrincipal.url;
+//    document.getElementById("link").href = link;
    
    const precio = IdPrincipal.price;
    document.getElementById("precio").innerHTML = precio;
@@ -58,63 +58,57 @@ function obtenerId(datos) {
    const fecha = IdPrincipal.released;
    document.getElementById("fecha").innerHTML = fecha;
 
-   otrasId =datos[1]
-   const ID1 = otrasId.appId;
-   console.log(ID1);
-    document.getElementById("otrasImagenes").src = otrasId.imgUrl;
 
-    const tituloOtros = otrasId.title;
-    document.getElementById("tituloOtros").innerHTML = tituloOtros;
+   for (let i = 0; i < 10; i++) {
+        otrasId =datos[i]
+        let ID1 = otrasId.appId;
+        console.log(ID1);
+        let div = 
+        `
+        
+        `
+    
+   }
+//    otrasId =datos[1]
+//    const ID1 = otrasId.appId;
+//    console.log(ID1);
+//     document.getElementById("otrasImagenes").src = otrasId.imgUrl;
 
-    const textOtro = otrasId.reviewSummary;
-    document.getElementById("textOtro").innerHTML = textOtro;
+//     const tituloOtros = otrasId.title;
+//     document.getElementById("tituloOtros").innerHTML = tituloOtros;
+
+//     const textOtro = otrasId.reviewSummary;
+//     document.getElementById("textOtro").innerHTML = textOtro;
 
 // -------------
-     const url2 = `https://steam2.p.rapidapi.com/appDetail/${ID}`;
+const url2 = `https://steam2.p.rapidapi.com/appDetail/${ID}`;
 
 async function datosUrl2(url2, options, ID) {
     try {
-        const response = await fetch(url2, options);
-        if (response.ok) {
-          const datos = await response.json();
-          console.log("datos de url descripcion"+datos);
-          mostrardescripcion(datos, ID);
-        } else {
-          throw new Error('Error en la solicitud. Código de estado: ' + response.status);
+      const response = await fetch(url2, options);
+      if (response.ok) {
+        const datos = await response.json();
+        console.log(datos);
+        const descripcion = datos.description; 
+        document.getElementById("descripcion").innerHTML = descripcion;
+
+        // const categoria1 = datos.tags[0].name; 
+        // document.getElementById("categoria1").innerHTML = categoria1;
+        for (let i = 0; i < 10; i++) {
+            let categoria = datos.tags[i].name; 
+            document.querySelector(".categoriasJuego").innerHTML += `<p>=> <span id="categoria1">${categoria}</span></p>`;
         }
+        // mostrardescripcion(datos, ID);
+      } else {
+        throw new Error('Error en la solicitud. Código de estado: ' + response.status);
+      }
     } catch (error) {
-        console.log('Error 2 en la solicitud:', error.message);
-        }
+      console.log('Error 2 en la solicitud:', error.message);
     }
+  }
+  
+    // Llamar a la función datosUrl2
+    datosUrl2(url2, options,ID);
+    
 }
-// Llamar a la función datosUrl2
-datosUrl2(url, options);
 
-function mostrardescripcion(datos, ID) {
-
-//   console.log(datos);
-//   const description = datos.description;
-//   console.log(description);
-//   document.getElementById("descripcion").innerHTML = description;
-
-//   const url3 = `https://youtube138.p.rapidapi.com/video/comments/?id=${ID}&hl=en&gl=US`;
-
-//   fetch(url3, options)
-//     .then((respon) => respon.json())
-//     .then((datos) => mostrarComentarios(datos, ID))
-//     .catch(function (error) {
-//       console.log('Error en la solicitud:', error.message);
-//     });
-// }
-
-// function mostrarComentarios(datos) {
-//   console.log(datos);
-//   let coment = ""
-//   for (const valor of datos.comments) {
-//     coment += `<p>${valor.content}</p><hr>` 
-//   }
-//   console.log(coment);
-//   document.getElementById("comentarios").innerHTML = coment
-
-
-}

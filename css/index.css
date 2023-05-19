@@ -20,7 +20,7 @@ body::-webkit-scrollbar-track-piece{
     background-color: transparent;
 }
 .noticias::-webkit-scrollbar{
-    width: 14px;
+    width: 12px;
 }
 .noticias::-webkit-scrollbar-thumb{
     height: 50px;
@@ -34,7 +34,7 @@ body::-webkit-scrollbar-track-piece{
     background-color: transparent;
 }
 .reviews::-webkit-scrollbar{
-    width: 14px;
+    width: 12px;
 }
 .reviews::-webkit-scrollbar-thumb{
     height: 50px;
@@ -45,6 +45,20 @@ body::-webkit-scrollbar-track-piece{
     background-color: #000000;
 }
 .reviews::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+.categoriasJuego::-webkit-scrollbar{
+    width: 12px;
+}
+.categoriasJuego::-webkit-scrollbar-thumb{
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+.categoriasJuego::-webkit-scrollbar-button{
+    background-color: #000000;
+}
+.categoriasJuego::-webkit-scrollbar-track-piece{
     background-color: transparent;
 }
 .imagen{
@@ -122,11 +136,14 @@ input:focus {
     background-color: rgb(46, 2, 46);
     box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
     padding-top: 2vh;
-    padding-left: 3%;
+    padding-left: 8%;
     flex-direction: column;
     overflow: auto;
     color: white;
     border-radius: 10px;
+}
+.categoriasJuego p{
+    font-size: 1.1rem;
 }
 .boton{
     display: flex;
@@ -135,7 +152,6 @@ input:focus {
 .boton button{
     border: none;
     border-radius: 40px;
-    padding: 10px;
     background: linear-gradient(to right, rgba(41, 3, 41, 0.774), #ffffff, rgb(221, 192, 221), rgb(46, 2, 46));
     color: rgb(39, 31, 31);
     padding: 10px 20px;
