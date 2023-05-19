@@ -49,9 +49,6 @@ function obtenerId(datos) {
    const title = IdPrincipal.title;
    document.getElementById("title").innerHTML = title;
    
-//    const link = IdPrincipal.url;
-//    document.getElementById("link").href = link;
-   
    const precio = IdPrincipal.price;
    document.getElementById("precio").innerHTML = precio;
    

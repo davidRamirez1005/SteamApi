@@ -2,21 +2,27 @@ import scrollTopButton from "./boton.js";
 
 
 const input = document.getElementById('search');
-const imagen = document.getElementById('imagen');
-const imagenJuego = document.getElementById('imgJuego');
+const contenedor = document.querySelector('.container-fluid');
 
 
 input.addEventListener('focus', () => {
-  imagen.classList.add('blur');
-  imagenJuego.classList.add('blur');
+  contenedor.classList.add('blur');
 });
 
 input.addEventListener('blur', () => {
-  imagen.classList.remove('blur');
-  imagenJuego.classList.remove('blur');
+  contenedor.classList.remove('blur');
 });
 
 document.addEventListener("DOMContentLoaded",()=>{
   scrollTopButton(".scroll-top-btn")
 })
 
+
+colorButton.addEventListener('click', function() {
+  const fondo = "#23262E"
+  const fondo2 ="#4e697d"
+  
+  body.style.backgroundColor = fondo;
+  cambio.style.backgroundColor = fondo2;
+
+});

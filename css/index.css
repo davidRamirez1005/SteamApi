@@ -4,7 +4,7 @@
     margin: 0%;
 }
 body{
-    background-color: rgb(46, 2, 46);
+    background-color: #23262E;
 }
 h2{
     font-family:monospace;
@@ -83,7 +83,7 @@ body::-webkit-scrollbar-track-piece{
     transition: filter 0.5s ease;
 }
 .blur {
-    filter: blur(10px);
+    filter: blur(8px);
   }
 .inp input{
     display: flex;
@@ -129,12 +129,13 @@ input:focus {
     align-content: center;
     justify-content: center;
 }
-.container-fluid{
+.container-fluid {
     width: 95%;
     margin: auto;
-    background-color: rgba(37, 4, 37, 0.774);
     margin-top: 10vh;
+    background-image: linear-gradient(to bottom, rgb(32, 2, 32), rgba(65, 15, 65, 0.87));
 }
+
 .categoriasJuego{
     display: flex;
     flex-direction: column;
@@ -171,7 +172,7 @@ button:hover {
     background-position: 100% 0;
 }
 .noticias{
-    height: 40vh;
+    height: 50vh;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -184,7 +185,7 @@ button:hover {
 .reviews{
     background-color: rgb(46, 2, 46);
     box-shadow: rgb(22, 1, 22) 0px 3px 20px 8px;
-    height: 32vh;
+    height: 42vh;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -318,4 +319,29 @@ button:hover {
 .parrafoNoticias{
     color: white;
     margin-left: 1.5%;
+}
+.scroll-top-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    font-weight: bold;
+    background-color: rgb(183, 0, 255);
+    color: rgb(5, 2, 2);
+    cursor: pointer;
+    border: 0;
+    margin-bottom: 1%;
+    transition: all 0.5s ease-out;
+}
+.scroll-top-btn:hover{
+    background-color: white;
+    color: rgb(48, 1, 48);
+}
+.hidden{
+    visibility: hidden;
+    opacity: 0;
 }
