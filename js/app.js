@@ -57,14 +57,14 @@ function obtenerId(datos) {
 
    const summary = IdPrincipal.reviewSummary; 
    document.getElementById("summary").innerHTML = summary
-
+  
    for (let i = 0; i < 10; i++) {
         otrasId =datos[i]
         let ID1 = otrasId.appId;
         console.log(ID1);
         const tituloOtros = otrasId.title;
         const textOtro = otrasId.reviewSummary;
-        document.querySelector(".tarjetas").innerHTML += 
+        document.querySelector(".tarjetas").innerHTML = 
                         `
                         <div class="col-3 tarj" >
                         <div class="img2">
